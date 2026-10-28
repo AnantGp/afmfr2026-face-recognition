@@ -22,17 +22,7 @@ Our focus was parameter-efficient adaptation: freeze the CLIP backbone, train lo
 
 ## Approach
 
-```mermaid
-flowchart LR
-    A[Official synthetic face images] --> B[224 x 224 augmentation and CLIP normalization]
-    B --> C[Frozen CLIP ViT-L/14 visual encoder]
-    C --> D[Train Q and V LoRA updates]
-    D --> E[ArcFace identity objective]
-    D --> F[Embedding preservation in Track 2]
-    E --> G[Merge LoRA and remove classifier]
-    F --> G
-    G --> H[ONNX visual encoder: 768-dimensional embeddings]
-```
+![Training and export pipeline: synthetic images enter CLIP with Q/V LoRA, optimized by ArcFace and Track 2 embedding preservation; export merges updates and removes the classifier.](assets/method.svg)
 
 1. **Initialize from OpenAI CLIP ViT-L/14.** Only the image encoder is used.
 2. **Adapt attention with LoRA.** Train low-rank updates to query and value projections across the 24 visual transformer blocks while keeping the pretrained backbone frozen.

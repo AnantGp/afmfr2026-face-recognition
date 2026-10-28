@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="336" viewBox="0 0 900 336" role="img" aria-labelledby="title desc">
+  <title id="title">CLIP adaptation for synthetic-data face recognition</title>
+  <desc id="desc">Training uses synthetic images, frozen CLIP with trainable Q and V LoRA, ArcFace, and Track 2 preservation. Export merges LoRA and removes the classifier to produce a 768-dimensional ONNX encoder.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#687580" stroke-width="1.5"/></marker>
+  </defs>
+  <rect width="900" height="336" rx="6" fill="#f6f8fa"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#18232b">
+    <text x="24" y="30" font-size="13" font-weight="700" fill="#52616c">TRAINING</text>
+    <rect x="24" y="50" width="232" height="92" rx="6" fill="#fff" stroke="#cbd3da"/>
+    <text x="40" y="79" font-size="17" font-weight="700">Synthetic face images</text>
+    <text x="40" y="104" font-size="14">224 x 224 augmentation</text>
+    <text x="40" y="126" font-size="14">Standard CLIP normalization</text>
+    <path d="M263 96H315" stroke="#687580" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="328" y="50" width="244" height="92" rx="6" fill="#e9f6f0" stroke="#3d8c70"/>
+    <text x="344" y="79" font-size="17" font-weight="700">CLIP ViT-L/14 visual</text>
+    <text x="344" y="104" font-size="14">Frozen pretrained backbone</text>
+    <text x="344" y="126" font-size="14">Trainable Q/V LoRA updates</text>
+    <path d="M579 96H631" stroke="#687580" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="644" y="50" width="232" height="92" rx="6" fill="#fff" stroke="#cbd3da"/>
+    <text x="660" y="79" font-size="17" font-weight="700">Identity separation</text>
+    <text x="660" y="104" font-size="14">Training-only ArcFace head</text>
+    <text x="660" y="126" font-size="14">Cosine preservation in Track 2</text>
+    <path d="M450 149V203" stroke="#687580" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="24" y="200" font-size="13" font-weight="700" fill="#52616c">EXPORT</text>
+    <rect x="24" y="216" width="852" height="92" rx="6" fill="#fff" stroke="#cbd3da"/>
+    <text x="40" y="249" font-size="17" font-weight="700">Merge LoRA weights and remove the identity classifier</text>
+    <text x="40" y="277" font-size="15">Original visual architecture · ONNX · 768-dimensional embeddings · CPU/CUDA conversion checks</text>
+  </g>
+</svg>
