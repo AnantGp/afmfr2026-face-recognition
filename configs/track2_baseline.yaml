@@ -1,0 +1,47 @@
+run_name: track2_baseline
+seed: 20260502
+track: track2
+
+paths:
+  manifest: data/manifests/track2_splits.csv
+  output_dir: runs/track2_baseline
+  clip_download_root: checkpoints/openai_clip
+
+data:
+  image_size: 224
+  split_train: train
+  split_val_same: val_same
+  split_val_identity: val_identity
+  num_workers: 2
+  pin_memory: true
+  max_val_images_per_identity: 4
+  max_val_identities: 1000
+
+model:
+  backbone_name: ViT-L/14
+  lora_rank: 4
+  lora_alpha: 8
+  lora_dropout: 0.08
+  lora_targets: qv
+  train_ln: false
+  train_visual_proj: false
+
+loss:
+  arcface_margin: 0.35
+  arcface_scale: 64.0
+  clip_preservation_weight: 0.05
+
+train:
+  epochs: 5
+  identities_per_batch: 8
+  images_per_identity: 2
+  grad_accum_steps: 8
+  lr_lora: 0.00001
+  lr_head: 0.0001
+  weight_decay: 0.02
+  warmup_steps: 500
+  max_steps_per_epoch: 0
+  log_every: 25
+  val_every_epoch: 1
+  amp: true
+  grad_clip_norm: 1.0

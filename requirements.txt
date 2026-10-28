@@ -1,0 +1,9 @@
+clip @ git+https://github.com/openai/CLIP.git@ded190a052fdf4585bd685cee5bc96e0310d2c93
+ftfy
+numpy
+onnx
+onnxruntime-gpu
+pillow
+pyyaml
+regex
+tqdm

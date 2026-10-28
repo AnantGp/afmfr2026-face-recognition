@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "Please cite the joint competition paper when referencing this participant implementation."
+title: "ArogyaPandit: CLIP adaptation for synthetic-data face recognition"
+type: software
+version: 0.1.0
+authors:
+  - family-names: Gupta
+    given-names: Gourav
+    affiliation: Arogyapandit Private Limited, India
+  - family-names: Gupta
+    given-names: Anant
+    affiliation: Arogyapandit Private Limited, India
+repository-code: https://github.com/AnantGp/afmfr2026-face-recognition
+preferred-citation:
+  type: article
+  title: "IJCB-AFMFR 2026: Competition on Adapting Foundation Models for Face Recognition Using Synthetic Training Data"
+  year: 2026
+  doi: 10.48550/arXiv.2607.24422
+  url: https://arxiv.org/abs/2607.24422
+  journal: arXiv
+  authors:
+    - {family-names: Chettaoui, given-names: Tahar}
+    - {family-names: Ozgur, given-names: Guray}
+    - {family-names: Caldeira, given-names: Eduarda}
+    - {family-names: Nakvosas, given-names: Arturas}
+    - {family-names: Otroshi Shahreza, given-names: Hatef}
+    - {family-names: Marcel, given-names: Sébastien}
+    - {family-names: Shukla, given-names: Rishabh}
+    - {family-names: Takkar, given-names: Aditya}
+    - {family-names: Khullar, given-names: Rushil}
+    - {family-names: Yadav, given-names: Lalak}
+    - {family-names: Gupta, given-names: Gourav}
+    - {family-names: Gupta, given-names: Anant}
+    - {family-names: Yu, given-names: Shiqi}
+    - {family-names: Struc, given-names: Vitomir}
+    - {family-names: Damer, given-names: Naser}
+    - {family-names: Boutros, given-names: Fadi}
